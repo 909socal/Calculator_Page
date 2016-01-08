@@ -45,7 +45,7 @@ function getOperator(){
 
 	if(operator=== '+'){
 		var num1 = firstNum.pop();
-		numbbbaaa1 = num1;
+		numbbbaaa1 = parseInt(num1);
 		firstNum= [];
 		myOperator = '+';
 		document.getElementById('results').innerHTML = 0;
@@ -56,6 +56,20 @@ function getOperator(){
 		firstNum= [];
 		myOperator = '-';
 		document.getElementById('results').innerHTML = 0;
+	} 	
+	if(operator=== '*'){
+		var num1 = firstNum.pop();
+		numbbbaaa1 = num1;
+		firstNum= [];
+		myOperator = '*';
+		document.getElementById('results').innerHTML = 0;
+	} 
+	if(operator=== '/'){
+		var num1 = firstNum.pop();
+		numbbbaaa1 = num1;
+		firstNum= [];
+		myOperator = '/';
+		document.getElementById('results').innerHTML = 0;
 	} 
 	
 }
@@ -63,10 +77,26 @@ function getOperator(){
 function getEqual(){
 	 
 	 var num2 = firstNum.pop();
-	 numbbbaaa2 = num2;
+	 numbbbaaa2 = parseInt(num2);
 	 console.log(typeof(myOperator));
-	 var answer = numbbbaaa1 + myOperator + numbbbaaa2;
-	 answer = parseInt(answer);
+	 var answer = 0;
+	 if(myOperator === '+')
+	 {
+		answer = numbbbaaa1 + numbbbaaa2;
+	 } 
+	 if(myOperator === '-')
+	 {
+		answer = numbbbaaa1 - numbbbaaa2;
+	 } 
+	 if(myOperator === '*')
+	 {
+		answer = numbbbaaa1 * numbbbaaa2;
+	 } 
+	 if(myOperator === '/')
+	 {
+		answer = numbbbaaa1 / numbbbaaa2;
+	 } 
+	 answer = answer;
 	 console.log('nummm2:', typeof(numbbbaaa2));
 	 console.log('numnnn1:' , typeof(numbbbaaa1));
 	 console.log('answer:' ,(answer));
